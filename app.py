@@ -19,6 +19,8 @@ if st.button("Submit"):
                     messages=[{"role": "user", "content": prompt}]
                 )
                 answer = response.choices[0].message.content
-                st.success(answer)
+                # Safe output
+                st.markdown(f"```\n{answer}\n```")
+
             except Exception as e:
                 st.error(f"Error: {e}")
